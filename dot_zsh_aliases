@@ -1,0 +1,109 @@
+# dev aliases ----------------------------------------
+alias dev="cd /Users/gcman105/devel/PythonProjects/waf_dapp"
+alias dot="cd /Users/gcman105/dotfiles"
+alias hug="cd /Users/gcman105/devel/hugo"
+alias waf="cd /Users/gcman105/devel/WAFoods"
+alias aur="cd /Users/gcman105/devel/laravel/RFauris"
+
+# vim aliases ----------------------------------------
+alias vi="vim"
+alias vim="vim"
+alias vv="vifm"
+
+# webp aliases ---------------------------------------
+alias ic="~/apps/webp-convert-directory.sh"
+
+# nnn aliases ----------------------------------------
+alias nnn="nnn -Rd"
+alias nn="nnn -Rd"
+
+# ngrok aliases --------------------------------------
+alias ng5="ngrok http --region=eu --hostname=five57.eu.ngrok.io 5000"
+alias ng="ngrok http --region=eu --hostname=five57.eu.ngrok.io 80"
+
+# tmux aliases ---------------------------------------
+alias xx="exit"
+
+# edit & source aliases ------------------------------
+alias ea="nvim /Users/gcman105/.zsh_aliases"
+alias ef="nvim /Users/gcman105/.vifmrc"
+alias et="nvim /Users/gcman105/.tmux.conf"
+alias ev="nvim /Users/gcman105/.vimrc"
+alias ey="nvim /Users/gcman105/.config/alacritty/alacritty.yml"
+alias ew="nvim /Users/gcman105/vimwiki/index.md"
+alias ez="nvim /Users/gcman105/.zshrc"
+alias sz="source /Users/gcman105/.zshrc"
+#alias =""
+alias tt="clear && cat ~/.zsh_aliases"
+
+# emacs aliases --------------------------------------
+alias em="emacsclient -c -a emacs"
+
+# tmuxinator aliases ---------------------------------
+alias ta="tmux attach -t "
+alias tl="tmux ls"
+
+# tmuxinator aliases ---------------------------------
+alias ml="mux list"
+
+# laravel aliases ------------------------------------
+alias sail="bash vendor/bin/sail "
+alias sart="bash vendor/bin/sail artisan "
+alias scom="bash vendor/bin/sail composer "
+alias snpm="bash vendor/bin/sail npm "
+alias stst="bash vendor/bin/sail artisan test "
+alias stkr="bash vendor/bin/sail tinker "
+
+# artisan aliases ------------------------------------
+alias art="php artisan "
+
+# git aliases ----------------------------------------
+alias ga="git add "
+alias gaa="git add ."
+alias gc="git commit -m "
+alias gl="git log --oneline --graph --histogram"
+alias gma="git submodule add "
+alias gmi="git submodulei init"
+alias gmu="git submodule update --remote --merge"
+alias gp="git push "
+alias gs="git status"
+
+# python aliases -------------------------------------
+alias pm="python manage.py "
+alias pmm="python manage.py migrate"
+alias pmmm="python manage.py makemigrations"
+alias pms="python manage.py shell"
+alias pmr="python manage.py runserver"
+alias pmd="python manage.py runserver --pdb"
+alias pmt="python manage.py test"
+
+# pip aliases ----------------------------------------
+alias pi="pip install "
+alias pif="pip freeze > requirements.txt"
+alias pil="pip list"
+alias pir="pip install -r requirements.txt"
+alias piua="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
+
+# composer aliases -----------------------------------
+alias cda="composer dump-autoload"
+alias ci="composer install"
+alias cu="composer update"
+
+# phpunit aliases ------------------------------------
+alias phpunit="vendor/bin/phpunit "
+alias ut="phpunit"
+
+# venv aliases ---------------------------------------
+alias ave=". .venv/bin/activate"
+alias cve="python3 -m venv .venv && . .venv/bin/activate"
+alias dve="deactivate"
+
+# yarn aliases ---------------------------------------
+#alias =""
+alias ya="yarn add "
+alias yd="yarn add -D"
+alias yl="yarn list "
+
+# util aliases ---------------------------------------
+alias ll='ls -lG'
+

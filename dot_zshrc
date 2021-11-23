@@ -1,0 +1,250 @@
+# XDG Base Directory Specification -------------------------------------------
+# https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+if [[ $HOME ]]; then
+  if [[ ! $XDG_DATA_HOME ]]; then
+    export XDG_DATA_HOME=$HOME/.local/share
+  fi
+
+  if [[ ! $XDG_CONFIG_HOME ]]; then
+    export XDG_CONFIG_HOME=$HOME/.config
+  fi
+
+  if [[ ! $XDG_DATA_DIRS ]]; then
+    export XDG_DATA_DIRS=/usr/local/share/:/usr/share/
+  fi
+
+  if [[ ! $XDG_CONFIG_DIRS ]]; then
+    export XDG_CONFIG_DIRS=/etc/xdg
+  fi
+
+  if [[ ! $XDG_CACHE_HOME ]]; then
+    export XDG_CACHE_HOME=$HOME/.cache
+  fi
+fi
+# end XDG Base Directory Specification -------------------
+
+export SHELL="/usr/local/bin/zsh"
+export PATH="/usr/local/bin:$PATH"
+
+
+# Enable autocompletions ------------------------------------------------
+autoload -Uz compinit
+typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
+if [ $(date +'%j') != $updated_at ]; then
+  compinit -i
+else
+  compinit -C -i
+fi
+zmodload -i zsh/complist
+# Save history so we get auto suggestions
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=100000
+SAVEHIST=$HISTSIZE
+# Options
+setopt auto_cd # cd by typing directory name if it's not a command
+setopt auto_list # automatically list choices on ambiguous completion
+setopt auto_menu # automatically use menu completion
+setopt always_to_end # move cursor to end if word had one match
+setopt hist_ignore_all_dups # remove older duplicate entries from history
+setopt hist_reduce_blanks # remove superfluous blanks from history items
+setopt inc_append_history # save history entries as soon as they are entered
+setopt share_history # share history between different instances
+setopt correct_all # autocorrect commands
+setopt interactive_comments # allow comments in interactive shells
+# Improve autocompletion style
+zstyle ':completion:*' menu select # select completions with arrow keys
+zstyle ':completion:*' group-name '' # group results by category
+zstyle ':completion:::::' completer _expand _complete _ignored _approximate # enable approximate matches for completion
+
+
+# User configuration ----------------------------------------------------
+
+# Enable Vim mode in ZSH
+#bindkey -v
+#autoload -U edit-command-line
+#zle -N edit-command-line
+#bindkey '^E' edit-command-line                   # Opens Vim to edit current command line
+#bindkey '^R' history-incremental-search-backward # Perform backward search in command line history
+#bindkey '^S' history-incremental-search-forward  # Perform forward search in command line history
+#bindkey '^P' history-search-backward             # Go back/search in history (autocomplete)
+#bindkey '^N' history-search-forward              # Go forward/search in history (autocomplete)
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR="/usr/local/bin/nvim"
+  export VISUAL="/usr/local/bin/nvim"
+else
+  export EDITOR='nvim'
+  export VISUAL='nvim'
+fi
+
+source ~/.tmxi/tmuxinator.zsh
+
+# jedi
+#export PYTHONSTARTUP=$HOME/.pythonrc.py
+
+# yarn
+#export PATH="$(yarn global bin):$PATH"
+
+# wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh -O /usr/local/share/zsh/site-functions/_tmuxinator
+
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+
+# python
+#export PATH="/usr/local/opt/python@3.9/libexec/bin:$PATH"
+
+# spaceship config ------------------------------------------------------
+#SPACESHIP_PROMPT_ORDER=(
+  #user          # Username section
+  #dir           # Current directory section
+  #host          # Hostname section
+  #git           # Git section (git_branch + git_status)
+  #hg            # Mercurial section (hg_branch  + hg_status)
+  #exec_time     # Execution time
+  #line_sep      # Line break
+  #vi_mode       # Vi-mode indicator
+  #jobs          # Background jobs indicator
+  #exit_code     # Exit code section
+  #char          # Prompt character
+#)
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_CHAR_SYMBOL="❯"
+SPACESHIP_CHAR_SUFFIX=" "
+
+
+# zplug -----------------------------------------------------------------
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+#source ~/.zplug/init.zsh
+
+
+zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+zplug "zpm-zsh/clipboard"
+zplug "zdharma/history-search-multi-word"
+zplug "Aloxaf/fzf-tab"
+zplug "changyuheng/fz", defer:1
+zplug "rupa/z", use:z.sh
+
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+zplug load --verbose
+
+
+# aliases ---------------------------------------------------------------
+source ~/.zsh_aliases
+
+
+# luajit ----------------------------------------------------------------
+export PATH="/usr/local/opt/luajit-openresty/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/luajit-openresty/lib"
+export CPPFLAGS="-I/usr/local/opt/luajit-openresty/include"
+export PKG_CONFIG_PATH="/usr/local/opt/luajit-openresty/lib/pkgconfig"
+
+
+# nnn config ------------------------------------------------------------
+export NNN_BMS="d:/Volumes/Annes2TB-1/Downloads;p:/Volumes/Annes2TB-1/Google Drive/_PARA_GoogleDrive;c:/Users/gcman105/devel"
+export NNN_USE_EDITOR=1
+export NNN_TRASH=1
+export NNN_CONTEXT_COLORS="1234"
+export NNN_PLUG='o:fzopen'
+
+
+# openssl config --------------------------------------------------------
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+
+# MU config--------------------------------------------------------------
+export MAILDIR=~/Mail
+
+# -----------------------------------------------------------------------
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export PATH="/usr/local/opt/gettext/bin:$PATH"
+
+
+# -----------------------------------------------------------------------
+function homestead() {
+    ( cd ~/Homestead && vagrant $* )
+}
+
+
+# -----------------------------------------------------------------------
+export PATH="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java:$PATH"
+
+
+# -----------------------------------------------------------------------
+[[ $TMUX = "" ]] && export TERM="xterm-256color"
+
+
+# -----------------------------------------------------------------------
+export PATH="/usr/local/sbin:$PATH"
+
+
+# -----------------------------------------------------------------------
+export PATH="/Users/gcman105/.cargo/bin:$PATH"
+
+
+# -----------------------------------------------------------------------
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+TRAPWINCH() {
+  zle && { zle reset-prompt; zle -R }
+}
+
+
+# -----------------------------------------------------------------------
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
+# -----------------------------------------------------------------------
+#export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+eval "$(rbenv init -)"
+
+
+# -----------------------------------------------------------------------
+export PATH="/usr/local/opt/ncurses/bin:$PATH"
+export PATH="/usr/local/opt/openldap/bin:$PATH"
+export PATH="/usr/local/opt/openldap/sbin:$PATH"
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export PATH="/usr/local/bin/pandoc:$PATH"
+
+export NODE_PATH='npm root -g'
+
+#if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
+# -----------------------------------------------------------------------
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+
+eval "$(fnm env)"
+
+
+export LC_ALL="en_GB.UTF-8"
+export LC_CTYPE="en_GB.UTF-8"
+
+if [[ -z "$LC_ALL" ]]; then
+  export LC_ALL='en_GB.UTF-8'
+fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/gcman105/apps/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/gcman105/apps/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/gcman105/apps/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gcman105/apps/google-cloud-sdk/completion.zsh.inc'; fi
+
