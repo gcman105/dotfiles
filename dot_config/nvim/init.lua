@@ -1,57 +1,79 @@
 
---o.guicursor = n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
---o.statusline^ = %{coc#status()}%{get(b:,'coc_current_function','')}
-bo.autoindent = true
-bo.smartindent = true
-o.autowrite = true
-o.background = dark           -- or light
-o.backspace = 2               -- Allow backspacing over indent, eol, and the start of an insert
-o.backup = false              -- Some servers have issues with backup files, see COC #649.
-o.clipboard = unnamed
-o.cmdheight = 2               -- Give more space for displaying messages.
-o.colorcolumn = 80
-o.cpoptions+ = $              -- Show $ at the end of a change command
-o.cursorline = true
-o.errorbells = false
-o.expandtab = true                   -- Insert spaces when TAB is pressed.
-o.foldcolumn = 3              -- Set the fold gutter width
-o.foldlevel = 3               -- Set the opening fold level
-o.foldmethod = marker
-o.foldopen+ = jump
-o.formatoptions = qrn1
-o.hidden = true               -- Switch between buffers without saving
-o.hlsearch = true             -- Highlight searching
-o.ignorecase = false
-o.incsearch = true            -- Set incremental searching--
-o.laststatus = 2              -- Always show the status line
-o.lazyredraw = true           -- Don't update the display while executing macros
-o.mouse = a
-o.rtp+ = /usr/local/opt/fzf
-o.scrolloff = 5               -- Keep the cursor 3 lines off of bottom when scrolling
-o.shiftround = true
-o.shiftwidth = 4              -- Indentation amount for < and > commands.
-o.shortmess+ = c              -- Don't pass messages to ins-completion-menu.
-o.showfulltag = true          -- When completing by tag, show the whole tag, not just the function name
-o.showmatch = true            -- Show matching brackets.
-o.softtabstop = 4
-o.spelllang = en_gb           -- Set to British English and Spanish
-o.splitbelow = true           -- More natural split below
-o.splitright = true           -- More natural split right
-o.startofline = false         -- Do not jump to first character with page commands.
-o.swapfile = false
-o.synmaxcol = 512             -- Syntax coloring lines that are too long just slows down the world
-o.tabstop = 4                 -- Render TABs using this many spaces.
-o.termguicolors = true        -- important!!
-o.textwidth = 79
-o.timeoutlen = 800            -- A little bit more time for macros
-o.ttimeoutlen = 50            -- Make Esc work faster
-o.undodir = ~/.vim/undodir
-o.undofile = true
-o.updatetime = 300            -- Longer updatetime (default is 4000 ms  =  4 s) leads to delays and poor user experience
-o.virtualedit = all           -- Allow cursor into places it cant normally go
-o.wildmenu = true             -- Command line completion
-o.wrap = false
-o.writebackup = false
-wo.number = true              -- Show lines numbers
-wo.relativenumber = true      -- Make line numbers relative
-wo.signcolumn = 'yes'         -- Always show the signcolumn, otherwise it would shift the text each time.
+vim.cmd([[
+set cpoptions+=$                " Show $ at the end of a change command
+set foldopen+=jump
+set shortmess+=c                " Don't pass messages to ins-completion-menu.
+]])
+
+--vim.o.guicursor = n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
+--vim.o.rtp+ = /usr/local/opt/fzf
+--vim.o.statusline^ = %{coc#status()}%{get(b:,'coc_current_function','')}
+vim.bo.autoindent = true
+vim.bo.smartindent = true
+vim.o.autowrite = true
+vim.o.background = 'dark'           -- or light
+vim.o.backspace = '2'               -- Allow backspacing over indent, eol, and the start of an insert
+vim.o.backup = false                -- Some servers have issues with backup files, see COC #649.
+vim.o.clipboard = 'unnamed'
+vim.o.cmdheight = 2                 -- Give more space for displaying messages.
+vim.o.cursorline = true
+vim.o.errorbells = false
+vim.o.expandtab = true              -- Insert spaces when TAB is pressed.
+vim.o.foldlevel = 3                 -- Set the opening fold level
+vim.o.formatoptions = 'qrn1'
+vim.o.hidden = true                 -- Switch between buffers without saving
+vim.o.hlsearch = true               -- Highlight searching
+vim.o.ignorecase = false
+vim.o.incsearch = true              -- Set incremental searching--
+vim.o.laststatus = 2                -- Always show the status line
+vim.o.lazyredraw = true             -- Don't update the display while executing macros
+vim.o.mouse = 'a'
+vim.o.scrolloff = 5                 -- Keep the cursor 3 lines off of bottom when scrolling
+vim.o.shiftround = true
+vim.o.shiftwidth = 4                -- Indentation amount for < and > commands.
+vim.o.showfulltag = true            -- When completing by tag, show the whole tag, not just the function name
+vim.o.showmatch = true              -- Show matching brackets.
+vim.o.softtabstop = 4
+vim.o.spelllang = 'en_gb'           -- Set to British English and Spanish
+vim.o.splitbelow = true             -- More natural split below
+vim.o.splitright = true             -- More natural split right
+vim.o.startofline = false           -- Do not jump to first character with page commands.
+vim.o.swapfile = false
+vim.o.synmaxcol = 512               -- Syntax coloring lines that are too long just slows down the world
+vim.o.tabstop = 4                   -- Render TABs using this many spaces.
+vim.o.termguicolors = true          -- important!!
+vim.o.textwidth = 79
+vim.o.timeoutlen = 800              -- A little bit more time for macros
+vim.o.ttimeoutlen = 50              -- Make Esc work faster
+vim.o.undodir = '~/.vim/undodir'
+vim.o.undofile = true
+vim.o.updatetime = 300              -- Longer updatetime (default is 4000 ms  =  4 s) leads to delays and poor user experience
+vim.o.virtualedit = 'all'           -- Allow cursor into places it cant normally go
+vim.o.wildmenu = true               -- Command line completion
+vim.o.wrap = false
+vim.o.writebackup = false
+vim.wo.colorcolumn = '80'
+vim.wo.foldcolumn = '3'             -- Set the fold gutter width
+vim.wo.foldmethod = 'marker'
+vim.wo.number = true                -- Show lines numbers
+vim.wo.relativenumber = true        -- Make line numbers relative
+vim.wo.signcolumn = 'yes'           -- Always show the signcolumn, otherwise it would shift the text each time.
+
+vim.g.mapleader = ' '
+local key_mapper = function(mode, key, result)
+  vim.api.nvim_set_keymap(
+    mode,
+    key,
+    result,
+    {noremap = true, silent = true}
+  )
+end
+key_mapper('', '<C-b>', ':buffers<CR>:buffer<Space>')
+key_mapper('', '<C-h>', '<C-w>h')
+key_mapper('', '<C-j>', '<C-w>j')
+key_mapper('', '<C-k>', '<C-w>k')
+key_mapper('', '<C-l>', '<C-w>l')
+key_mapper('', '<F18>', '<C-i>')    -- Using Karabiner to avoid collision between <Tab> and <C-i>
+key_mapper('', 'gf', ':edit <cfile><CR>')
+key_mapper('i', 'jj', '<ESC>')
+
