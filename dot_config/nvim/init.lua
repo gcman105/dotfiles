@@ -120,14 +120,14 @@ key_mapper('', '<Leader>n', ':NnnPicker %:p:h<CR>')
 key_mapper('', '<Leader>qc', ':cclose<CR>')         -- Close QuickFix
 key_mapper('', '<Leader>qo', ':cope<CR>')           -- Open QuickFix
 
-key_mapper('', '<Leader>1', 'require("harpoon.ui").nav_file(1)<CR>')
-key_mapper('', '<Leader>2', 'require("harpoon.ui").nav_file(2)<CR>')
-key_mapper('', '<Leader>3', 'require("harpoon.ui").nav_file(3)<CR>')
-key_mapper('', '<Leader>4', 'require("harpoon.ui").nav_file(4)<CR>')
-key_mapper('', '<Leader>5', 'require("harpoon.ui").nav_file(5)<CR>')
+key_mapper('n', '<Leader>1', 'require("harpoon.ui").nav_file(1)<CR>')
+key_mapper('n', '<Leader>2', 'require("harpoon.ui").nav_file(2)<CR>')
+key_mapper('n', '<Leader>3', 'require("harpoon.ui").nav_file(3)<CR>')
+key_mapper('n', '<Leader>4', 'require("harpoon.ui").nav_file(4)<CR>')
+key_mapper('n', '<Leader>5', 'require("harpoon.ui").nav_file(5)<CR>')
 
-key_mapper('', '<Leader>h', 'require("harpoon.mark").add_file()<CR>')
-key_mapper('', '<Leader>m', 'require("harpoon.ui").toggle_quick_menu()<CR>')
+key_mapper('n', '<Leader>h', 'require("harpoon.mark").add_file()<CR>')
+key_mapper('n', '<Leader>m', 'require("harpoon.ui").toggle_quick_menu()<CR>')
 
 
 -- Theme ---------------------------------------------------------------------
