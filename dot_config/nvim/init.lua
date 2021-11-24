@@ -86,6 +86,7 @@ let g:nnn#command = 'nnn -Rd'
 let g:python3_host_prog = expand('/Users/gcman105/.venv/bin/python')
 let g:vifm_replace_netrw = 1
 let g:vifm_replace_netrw_cmd = "Vifm"
+let g:coq_settings = { 'auto_start': 'shut-up' }
 ]])
 
 -- Keymap --------------------------------------------------------------------
