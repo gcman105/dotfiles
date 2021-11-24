@@ -4,6 +4,7 @@ vim.cmd([[
 set cpoptions+=$                " Show $ at the end of a change command
 set foldopen+=jump
 set shortmess+=c                " Don't pass messages to ins-completion-menu.
+set hl-colorcolumn=#4B1111
 ]])
 
 --vim.o.guicursor = n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
@@ -54,7 +55,6 @@ vim.o.wildmenu = true               -- Command line completion
 vim.o.wrap = false
 vim.o.writebackup = false
 vim.wo.colorcolumn = '80'
-vim.wo.hl-colorcolumn = '#4B1111'
 vim.wo.foldcolumn = '3'             -- Set the fold gutter width
 vim.wo.foldmethod = 'marker'
 vim.wo.number = true                -- Show lines numbers
