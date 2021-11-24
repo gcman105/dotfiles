@@ -78,6 +78,10 @@ key_mapper('', '<F18>', '<C-i>')    -- Using Karabiner to avoid collision betwee
 key_mapper('', 'gf', ':edit <cfile><CR>')
 key_mapper('i', 'jj', '<ESC>')
 
+-- Theme ---------------------------------------------------------------------
+vim.cmd[[colorscheme dracula]]
+
+
 -- Autocommands --------------------------------------------------------------
 vim.cmd([[
   augroup packer_user_config
