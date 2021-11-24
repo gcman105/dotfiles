@@ -120,8 +120,9 @@ key_mapper('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop
 key_mapper('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<CR>")
 key_mapper('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<CR>")
 
-key_mapper('', '<leader>tb', [[<cmd>Telescope builtin<CR>]])
-key_mapper('', '<leader>b', [[<cmd>Telescope buffers<CR>]])
+key_mapper('n', '<leader>tb', [[<cmd>Telescope builtin<CR>]])
+key_mapper('n', '<leader>b', [[<cmd>Telescope buffers<CR>]])
+key_mapper('n', '<Leader>tg', [[<cmd>Telescope git_files<CR>]])
 
 key_mapper('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
 key_mapper('', '<leader>', ':WhichKey " "<CR>')
@@ -130,6 +131,7 @@ key_mapper('n', '<leader>v', ':Vifm . .<CR>')
 key_mapper('n', '<Leader>n', ':NnnPicker %:p:h<CR>')
 key_mapper('n', '<Leader>qc', ':cclose<CR>')         -- Close QuickFix
 key_mapper('n', '<Leader>qo', ':cope<CR>')           -- Open QuickFix
+key_mapper('n', '<Leader>u', ':UndotreeShow<CR>')
 
 key_mapper('n', '<Leader>1', [[<cmd>lua require("harpoon.ui").nav_file(1)<CR>]])
 key_mapper('n', '<Leader>2', [[<cmd>lua require("harpoon.ui").nav_file(2)<CR>]])
