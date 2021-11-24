@@ -64,12 +64,12 @@ vim.wo.signcolumn = 'yes'           -- Always show the signcolumn, otherwise it 
 -- Keymap --------------------------------------------------------------------
 vim.g.mapleader = ' '
 local key_mapper = function(mode, key, result)
-  vim.api.nvim_set_keymap(
+    vim.api.nvim_set_keymap(
     mode,
     key,
     result,
     {noremap = true, silent = true}
-  )
+    )
 end
 key_mapper('', '<C-b>', ':buffers<CR>:buffer<Space>')
 key_mapper('', '<C-h>', '<C-w>h')
@@ -92,41 +92,44 @@ key_mapper('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.
 vim.cmd[[colorscheme dracula]]
 
 require'lualine'.setup {
-  options = {
-    icons_enabled = true,
-    theme = 'auto',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    disabled_filetypes = {},
-    always_divide_middle = true,
-  },
-  sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff',
-                  {'diagnostics', sources={'nvim_lsp', 'coc'}}},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
-    lualine_z = {'location'}
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {},
-  extensions = {}
+    options = {
+        icons_enabled = true,
+        theme = 'auto',
+        component_separators = { left = '', right = ''},
+        section_separators = { left = '', right = ''},
+        disabled_filetypes = {},
+        always_divide_middle = true,
+    },
+    sections = {
+        lualine_a = {'mode'},
+        lualine_b = {'branch', 'diff',
+        {'diagnostics', sources={'nvim_lsp', 'coc'}}},
+        lualine_c = {'filename'},
+        lualine_x = {'encoding', 'fileformat', 'filetype'},
+        lualine_y = {'progress'},
+        lualine_z = {'location'}
+    },
+    inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {'filename'},
+        lualine_x = {'location'},
+        lualine_y = {},
+        lualine_z = {}
+    },
+    tabline = {},
+    extensions = {}
 }
 
 -- LSP -----------------------------------------------------------------------
-require'lspconfig'.rust_analyzer.setup{
-}
+local lsp = require "lspconfig"
+local coq = require "coq"
 
-require'lspconfig'.tailwindcss.setup{
-}
+lsp.rust_analyzer.setup(coq.lsp_ensure_capabilities(
+))
+
+lsp.tailwindcss.setup(coq.lsp_ensure_capabilities(
+))
 
 
 -- Hop -----------------------------------------------------------------------
@@ -135,25 +138,25 @@ require'hop'.setup{}
 
 -- Treesitter ----------------------------------------------------------------
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "javascript" }, -- List of parsers to ignore installing
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-    disable = { "c" },  -- list of language that will be disabled
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-  },
+    ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+    ignore_install = { "javascript" }, -- List of parsers to ignore installing
+    highlight = {
+        enable = true,              -- false will disable the whole extension
+        disable = { "c" },  -- list of language that will be disabled
+        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+        -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+        -- Using this option may slow down your editor, and you may see some duplicate highlights.
+        -- Instead of true it can also be a list of languages
+        additional_vim_regex_highlighting = false,
+    },
 }
 
 
 -- Autocommands --------------------------------------------------------------
 vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+augroup end
 ]])
