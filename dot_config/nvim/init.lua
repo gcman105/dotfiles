@@ -112,10 +112,17 @@ require'lualine'.setup {
 }
 
 -- LSP -----------------------------------------------------------------------
-require'lspconfig'.rust_analyzer.setup{}
-require'lspconfig'.lua.setup{
+require'lspconfig'.rust_analyzer.setup{
     on_attach=require'completion'.on_attach
 }
+
+require'lspconfig'.sumneko_lua.setup{
+    on_attach=require'completion'.on_attach
+}
+
+
+-- Hop -----------------------------------------------------------------------
+require'hop'.setup{}
 
 
 -- Treesitter ----------------------------------------------------------------
