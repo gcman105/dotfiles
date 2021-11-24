@@ -1,4 +1,4 @@
-require('packer').startup()
+require('plugins')
 
 vim.cmd([[
 set cpoptions+=$                " Show $ at the end of a change command
