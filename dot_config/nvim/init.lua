@@ -60,6 +60,8 @@ vim.wo.number = true                -- Show lines numbers
 vim.wo.relativenumber = true        -- Make line numbers relative
 vim.wo.signcolumn = 'yes'           -- Always show the signcolumn, otherwise it would shift the text each time.
 
+
+-- Keymap --------------------------------------------------------------------
 vim.g.mapleader = ' '
 local key_mapper = function(mode, key, result)
   vim.api.nvim_set_keymap(
@@ -77,6 +79,14 @@ key_mapper('', '<C-l>', '<C-w>l')
 key_mapper('', '<F18>', '<C-i>')    -- Using Karabiner to avoid collision between <Tab> and <C-i>
 key_mapper('', 'gf', ':edit <cfile><CR>')
 key_mapper('i', 'jj', '<ESC>')
+
+key_mapper('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>")
+key_mapper('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>")
+key_mapper('o', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<cr>")
+key_mapper('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>")
+key_mapper('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>")
+key_mapper('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>")
+
 
 -- Theme ---------------------------------------------------------------------
 vim.cmd[[colorscheme dracula]]
