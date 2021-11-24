@@ -77,3 +77,10 @@ key_mapper('', '<F18>', '<C-i>')    -- Using Karabiner to avoid collision betwee
 key_mapper('', 'gf', ':edit <cfile><CR>')
 key_mapper('i', 'jj', '<ESC>')
 
+-- Autocommands --------------------------------------------------------------
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])
