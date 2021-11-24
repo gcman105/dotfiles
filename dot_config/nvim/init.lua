@@ -60,7 +60,6 @@ vim.wo.foldmethod = 'marker'
 vim.wo.number = true                -- Show lines numbers
 vim.wo.relativenumber = true        -- Make line numbers relative
 vim.wo.signcolumn = 'yes'           -- Always show the signcolumn, otherwise it would shift the text each time.
-vim.g
 
 
 vim.cmd([[
