@@ -109,7 +109,7 @@ key_mapper('', '<F18>', '<C-i>')    -- Using Karabiner to avoid collision betwee
 key_mapper('', 'gf', ':edit <cfile><CR>')
 key_mapper('i', 'jj', '<ESC>')
 
-key_mapper('n', '<F7>', "<cmd>lua require'hop'.hint_pattern({ current_line_only = false })<CR>")
+key_mapper('n', '<F7>', ':HopPattern<CR>')
 
 key_mapper('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<CR>")
 key_mapper('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<CR>")
