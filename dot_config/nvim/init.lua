@@ -109,9 +109,11 @@ key_mapper('', '<F18>', '<C-i>')    -- Using Karabiner to avoid collision betwee
 key_mapper('', 'gf', ':edit <cfile><CR>')
 key_mapper('i', 'jj', '<ESC>')
 
-key_mapper('n', '<Leader>hp', ':HopPattern<CR>')
-key_mapper('n', '<Leader>hl', ':HopLine<CR>')
 key_mapper('n', '<Leader>h2', ':HopChar2<CR>')
+key_mapper('n', '<Leader>ha', [[<cmd>lua require("harpoon.mark").add_file()<CR>]])
+key_mapper('n', '<Leader>hl', ':HopLine<CR>')
+key_mapper('n', '<Leader>hm', [[<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]])
+key_mapper('n', '<Leader>hp', ':HopPattern<CR>')
 
 key_mapper('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<CR>")
 key_mapper('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<CR>")
@@ -120,16 +122,16 @@ key_mapper('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop
 key_mapper('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<CR>")
 key_mapper('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<CR>")
 
-key_mapper('n', '<leader>b', [[<cmd>Telescope buffers<CR>]])
-key_mapper('n', '<leader>tb', [[<cmd>Telescope builtin<CR>]])
+key_mapper('n', '<Leader>b', [[<cmd>Telescope buffers<CR>]])
+key_mapper('n', '<Leader>tb', [[<cmd>Telescope builtin<CR>]])
+key_mapper('n', '<Leader>td', [[<cmd>Telescope lsp_definitions<CR>]])
 key_mapper('n', '<Leader>tg', [[<cmd>Telescope git_files<CR>]])
-key_mapper('n', '<leader>td', [[<cmd>Telescope lsp_definitions<CR>]])
-key_mapper('n', '<leader>tq', [[<cmd>Telescope quickfix<CR>]])
-key_mapper('n', '<leader>tr', [[<cmd>Telescope lsp_references<CR>]])
+key_mapper('n', '<Leader>tq', [[<cmd>Telescope quickfix<CR>]])
+key_mapper('n', '<Leader>tr', [[<cmd>Telescope lsp_references<CR>]])
 
-key_mapper('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
-key_mapper('', '<leader>', ':WhichKey " "<CR>')
-key_mapper('n', '<leader>v', ':Vifm . .<CR>')
+key_mapper('n', '<Leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
+key_mapper('', '<Leader>', ':WhichKey " "<CR>')
+key_mapper('n', '<Leader>v', ':Vifm . .<CR>')
 
 key_mapper('n', '<Leader>n', ':NnnPicker %:p:h<CR>')
 key_mapper('n', '<Leader>qc', ':cclose<CR>')         -- Close QuickFix
@@ -141,9 +143,6 @@ key_mapper('n', '<Leader>2', [[<cmd>lua require("harpoon.ui").nav_file(2)<CR>]])
 key_mapper('n', '<Leader>3', [[<cmd>lua require("harpoon.ui").nav_file(3)<CR>]])
 key_mapper('n', '<Leader>4', [[<cmd>lua require("harpoon.ui").nav_file(4)<CR>]])
 key_mapper('n', '<Leader>5', [[<cmd>lua require("harpoon.ui").nav_file(5)<CR>]])
-
-key_mapper('n', '<Leader>ha', [[<cmd>lua require("harpoon.mark").add_file()<CR>]])
-key_mapper('n', '<Leader>hm', [[<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]])
 
 
 -- Theme ---------------------------------------------------------------------
