@@ -4,7 +4,7 @@ vim.cmd([[
 set cpoptions+=$                " Show $ at the end of a change command
 set foldopen+=jump
 set shortmess+=c                " Don't pass messages to ins-completion-menu.
-hi ColorColumn ctermbg=darkgrey guibg=darkgrey
+" hi ColorColumn ctermbg=darkgrey guibg=darkgrey
 set viminfo='10,\"100,:20,%,n~/.viminfo
 ]])
 
