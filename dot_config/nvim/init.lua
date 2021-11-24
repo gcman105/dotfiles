@@ -64,14 +64,7 @@ vim.wo.signcolumn = 'yes'           -- Always show the signcolumn, otherwise it 
 
 vim.cmd([[
 let base16colorspace=256        " Access colors present in 256 colorspace
-let g:EasyMotion_keys='hjklasdfbvcxuiopqwernm,.'
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsExpandTrigger             =  "<Tab>"
-let g:UltiSnipsJumpBackwardTrigger       =  "<S-Tab>"
-let g:UltiSnipsJumpForwardTrigger        =  "<Tab>"
-let g:UltiSnipsListSnippets              =  "<S-Tab>"
-let g:airline_powerline_fonts = 1
-let g:airline_solarized_bg='dark'
+"let g:EasyMotion_keys='hjklasdfbvcxuiopqwernm,.'
 "let g:black_virtualenv = expand('/Users/gcman105/.venv')
 let g:gist_use_password_in_gitconfig = 0
 let g:loaded_python_provider = 1 " Disable Python 2 support:
@@ -92,8 +85,6 @@ let g:qs_lazy_highlight = 1
 let g:qs_max_chars=150
 let g:vifm_replace_netrw = 1
 let g:vifm_replace_netrw_cmd = "Vifm"
-let g:vimwiki_list = [{'path': '~/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
 ]])
 
 -- Keymap --------------------------------------------------------------------
