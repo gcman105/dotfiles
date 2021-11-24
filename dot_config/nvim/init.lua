@@ -88,7 +88,7 @@ key_mapper('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.
 key_mapper('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>")
 
 key_mapper('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
-key_mapper('n', '<leader>', ':WhichKey <Space><CR>')
+key_mapper('', '<leader>', ':WhichKey <Space><CR>')
 
 -- Theme ---------------------------------------------------------------------
 vim.cmd[[colorscheme dracula]]
