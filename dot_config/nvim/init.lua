@@ -123,11 +123,9 @@ require'lualine'.setup {
 
 -- LSP -----------------------------------------------------------------------
 require'lspconfig'.rust_analyzer.setup{
-    on_attach=require'completion'.on_attach
 }
 
-require'lspconfig'.sumneko_lua.setup{
-    on_attach=require'completion'.on_attach
+require'lspconfig'.tailwindcss.setup{
 }
 
 
@@ -158,6 +156,4 @@ vim.cmd([[
     autocmd!
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
   augroup end
-
-  autocmd BufEnter * lua require'completion'.on_attach()
 ]])
