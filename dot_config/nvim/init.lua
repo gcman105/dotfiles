@@ -4,8 +4,16 @@ vim.cmd([[
 set cpoptions+=$                " Show $ at the end of a change command
 set foldopen+=jump
 set shortmess+=c                " Don't pass messages to ins-completion-menu.
-" hi ColorColumn ctermbg=darkgrey guibg=darkgrey
-set viminfo=%,<800,'10,/50,:100,h,f0,n~/.viminfo
+set viminfo=%,<800,'10,/50,:100,h,f0,n/Users/gcman105/.viminfo
+"           | |    |   |   |    | |  + viminfo file path
+"           | |    |   |   |    | + file marks 0-9,A-Z 0=NOT stored
+"           | |    |   |   |    + disable 'hlsearch' loading viminfo
+"           | |    |   |   + command-line history saved
+"           | |    |   + search history saved
+"           | |    + files marks saved
+"           | + lines saved each register (old name for <, vi6.2)
+"           + save/restore buffer list
+hi ColorColumn ctermbg=darkgrey guibg=darkgrey
 ]])
 
 --vim.o.guicursor = n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
