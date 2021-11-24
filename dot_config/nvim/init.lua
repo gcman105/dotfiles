@@ -114,11 +114,11 @@ key_mapper('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.
 
 key_mapper('n', '<leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
 key_mapper('', '<leader>', ':WhichKey " "<CR>')
-key_mapper('', '<leader>v', ':Vifm . .<CR>')
+key_mapper('n', '<leader>v', ':Vifm . .<CR>')
 
-key_mapper('', '<Leader>n', ':NnnPicker %:p:h<CR>')
-key_mapper('', '<Leader>qc', ':cclose<CR>')         -- Close QuickFix
-key_mapper('', '<Leader>qo', ':cope<CR>')           -- Open QuickFix
+key_mapper('n', '<Leader>n', ':NnnPicker %:p:h<CR>')
+key_mapper('n', '<Leader>qc', ':cclose<CR>')         -- Close QuickFix
+key_mapper('n', '<Leader>qo', ':cope<CR>')           -- Open QuickFix
 
 key_mapper('n', '<Leader>1', [[<cmd>lua require("harpoon.ui").nav_file(1)<CR>]])
 key_mapper('n', '<Leader>2', [[<cmd>lua require("harpoon.ui").nav_file(2)<CR>]])
@@ -126,8 +126,8 @@ key_mapper('n', '<Leader>3', [[<cmd>lua require("harpoon.ui").nav_file(3)<CR>]])
 key_mapper('n', '<Leader>4', [[<cmd>lua require("harpoon.ui").nav_file(4)<CR>]])
 key_mapper('n', '<Leader>5', [[<cmd>lua require("harpoon.ui").nav_file(5)<CR>]])
 
-key_mapper('n', '<Leader>h', [[<cmd>lua require("harpoon.mark").add_file()<CR>]])
-key_mapper('n', '<Leader>m', [[<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]])
+key_mapper('n', '<Leader>ha', [[<cmd>lua require("harpoon.mark").add_file()<CR>]])
+key_mapper('n', '<Leader>hm', [[<cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>]])
 
 
 -- Theme ---------------------------------------------------------------------
