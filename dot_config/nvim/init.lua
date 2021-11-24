@@ -69,20 +69,18 @@ let base16colorspace=256        " Access colors present in 256 colorspace
 let g:gist_use_password_in_gitconfig = 0
 let g:loaded_python_provider = 1 " Disable Python 2 support:
 let g:markdown_composer_open_browser = 0
-"let g:netrw_banner = 0
-"let g:netrw_browse_split=2
-"let g:netrw_home= '$HOME/dotfiles'
-"let g:netrw_list_hide= netrw_gitignore#Hide()
-"let g:netrw_liststyle= 3
-"let g:netrw_winsize = 25
+
+let g:netrw_banner = 0
+let g:netrw_browse_split=2
+let g:netrw_home= '$HOME/dotfiles'
+let g:netrw_list_hide= netrw_gitignore#Hide()
+let g:netrw_liststyle= 3
+let g:netrw_winsize = 25
+
 let g:loaded_netrw       = 1
 let g:loaded_netrwPlugin = 1
 let g:nnn#command = 'nnn -Rd'
 let g:python3_host_prog = expand('/Users/gcman105/.venv/bin/python')
-let g:qs_buftype_blacklist = ['terminal', 'nofile']
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-let g:qs_lazy_highlight = 1
-let g:qs_max_chars=150
 let g:vifm_replace_netrw = 1
 let g:vifm_replace_netrw_cmd = "Vifm"
 ]])
