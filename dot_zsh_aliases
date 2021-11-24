@@ -6,8 +6,8 @@ alias waf="cd /Users/gcman105/devel/WAFoods"
 alias aur="cd /Users/gcman105/devel/laravel/RFauris"
 
 # vim aliases ----------------------------------------
-alias vi="vim"
-alias vim="vim"
+alias vi="nvim -u ~/.config/nvim/initORG.vim"
+alias vim="nvim"
 alias vv="vifm"
 
 # webp aliases ---------------------------------------
