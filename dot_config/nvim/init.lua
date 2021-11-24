@@ -99,6 +99,7 @@ local key_mapper = function(mode, key, result)
     {noremap = true, silent = true}
     )
 end
+
 key_mapper('', '<C-b>', ':buffers<CR>:buffer<Space>')
 key_mapper('', '<C-h>', '<C-w>h')
 key_mapper('', '<C-j>', '<C-w>j')
