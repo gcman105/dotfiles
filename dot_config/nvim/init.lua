@@ -4,6 +4,7 @@ vim.cmd([[
 set cpoptions+=$                " Show $ at the end of a change command
 set foldopen+=jump
 set shortmess+=c                " Don't pass messages to ins-completion-menu.
+hi ColorColumn ctermbg=darkgrey guibg=darkgrey
 ]])
 
 --vim.o.guicursor = n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
@@ -60,9 +61,6 @@ vim.wo.number = true                -- Show lines numbers
 vim.wo.relativenumber = true        -- Make line numbers relative
 vim.wo.signcolumn = 'yes'           -- Always show the signcolumn, otherwise it would shift the text each time.
 
-vim.cmd([[
-hi ColorColumn ctermbg=darkgrey guibg=darkgrey
-]])
 
 -- Keymap --------------------------------------------------------------------
 vim.g.mapleader = ' '
@@ -79,6 +77,7 @@ key_mapper('', '<C-h>', '<C-w>h')
 key_mapper('', '<C-j>', '<C-w>j')
 key_mapper('', '<C-k>', '<C-w>k')
 key_mapper('', '<C-l>', '<C-w>l')
+key_mapper('', '<F8>', ':TagbarToggle<CR>')
 key_mapper('', '<F18>', '<C-i>')    -- Using Karabiner to avoid collision between <Tab> and <C-i>
 key_mapper('', 'gf', ':edit <cfile><CR>')
 key_mapper('i', 'jj', '<ESC>')
