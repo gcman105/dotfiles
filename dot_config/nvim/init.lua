@@ -111,6 +111,10 @@ require'lualine'.setup {
   extensions = {}
 }
 
+-- LSP -----------------------------------------------------------------------
+require'lspconfig'.rust_analyzer.setup{}
+
+
 -- Treesitter ----------------------------------------------------------------
 require'nvim-treesitter.configs'.setup {
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
@@ -134,4 +138,6 @@ vim.cmd([[
     autocmd!
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
   augroup end
+
+  autocmd BufEnter * lua require'completion'.on_attach()
 ]])
