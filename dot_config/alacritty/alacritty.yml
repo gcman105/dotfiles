@@ -16,16 +16,16 @@ window.dynamic_title: true
 # Font Customization
 font:
   normal:
-    family: Fira Code
-    style: Retina
+    family: Fira Code Retina
+    style: Medium
   bold:
-    family: Fira Code
+    family: Fira Code Retina
     style: Bold
   italic:
-    family: Fira Code
+    family: Fira Code Retina
     style: Italic
   bold_italic:
-    family: Fira Code
+    family: Fira Code Retina
     style: Bold Italic
   size: 13.25
   offset:
