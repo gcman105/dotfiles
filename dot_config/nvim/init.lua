@@ -198,17 +198,20 @@ lsp.tsserver.setup(coq.lsp_ensure_capabilities(
 lsp.pyright.setup(coq.lsp_ensure_capabilities(
 ))
 
-lsp.gopls.setup(coq.lsp_ensure_capabilities{
-    cmd = {"gopls", "serve"},
-    settings = {
-      gopls = {
-        analyses = {
-          unusedparams = true,
-        },
-        staticcheck = true,
+--lsp.gopls.setup(coq.lsp_ensure_capabilities{
+--})
+
+lsp.gopls.setup {
+  cmd = {"gopls", "serve"},
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
       },
+      staticcheck = true,
     },
-})
+  },
+}
 
 lsp.tailwindcss.setup(coq.lsp_ensure_capabilities(
 ))
