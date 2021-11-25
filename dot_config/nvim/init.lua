@@ -186,6 +186,18 @@ local coq = require "coq"
 lsp.rust_analyzer.setup(coq.lsp_ensure_capabilities(
 ))
 
+lsp.html.setup(coq.lsp_ensure_capabilities(
+))
+
+lsp.tsserver.setup(coq.lsp_ensure_capabilities(
+))
+
+lsp.pyright.setup(coq.lsp_ensure_capabilities(
+))
+
+lsp.gopls.setup(coq.lsp_ensure_capabilities(
+))
+
 lsp.tailwindcss.setup(coq.lsp_ensure_capabilities(
 ))
 
