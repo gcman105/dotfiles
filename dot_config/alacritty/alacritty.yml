@@ -1,0 +1,91 @@
+# Window Customization
+window:
+  dimensions:
+    columns: 160
+    lines: 85
+  padding:
+    x: 3
+    y: 3
+  decorations: none
+scrolling:
+  history: 10000
+  multiplier: 3
+background_opacity: .90
+window.dynamic_title: true
+
+# Font Customization
+font:
+  normal:
+    family: Input Mono
+    style: Regular
+  bold:
+    family: Input Mono
+    style: Bold
+  italic:
+    family: Input Mono
+    style: Italic
+  bold_italic:
+    family: Input Mono
+    style: Bold Italic
+  size: 13.25
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+  use_thin_strokes: false
+  debug:
+    persistent_logging: false
+draw_bold_text_with_bright_colors: false
+
+# Colors (Nord)
+colors:
+  primary:
+    background: '0x2E3440'
+    foreground: '0xD8DEE9'
+  cursor:
+    text: '0x2E3440'
+    cursor: '0xD8DEE9'
+  normal:
+    black: '0x3B4252'
+    red: '0xBF616A'
+    green: '0xA3BE8C'
+    yellow: '0xEBCB8B'
+    blue: '0x81A1C1'
+    magenta: '0xB48EAD'
+    cyan: '0x88C0D0'
+    white: '0xE5E9F0'
+  bright:
+    black: '0x4C566A'
+    red: '0xBF616A'
+    green: '0xA3BE8C'
+    yellow: '0xEBCB8B'
+    blue: '0x81A1C1'
+    magenta: '0xB48EAD'
+    cyan: '0x8FBCBB'
+    white: '0xECEFF4'
+
+cursor:
+  style: Block
+  unfocused_hollow: true
+
+key_bindings:
+    - { key: A,         mods: Option,   action:     SpawnNewInstance }
+    - { key: Key3,      mods: Alt,      chars:      "#" } # almohadilla/cardinalidad '#'
+  # Ajustes para teclado macOS español/Spanish de España con layout ISO (no ANSI); tecla Intro grande.
+  #- { key: 10,        mods: Alt,    chars: "\x5c" } # barra invertida '\'
+  #- { key: 18,        mods: Alt,    chars: "\x7c" } # barra vertical '|'
+  #- { key: Key2,      mods: Alt,    chars: "@" } # arroba '@'
+  #- { key: Key3,      mods: Alt,    chars: "#" } # almohadilla/cardinalidad '#'
+  #- { key: Key6,      mods: Alt,    chars: "¬" } # negación en lógica '¬'
+  #- { key: 39,        mods: Alt,    chars: "{" } # abre llaves '{'
+  #- { key: 42,        mods: Alt,    chars: "}" } # cierra llaves '}'
+  #- { key: 33,        mods: Alt,    chars: "[" } # abre corchetes '['
+  #- { key: 30,        mods: Alt,    chars: "]" } # cierra corchetes ']'
+
+#||\\ //||
+#|| \// || Mackenzie Criswell
+#|| //\ || https://makc.co
+#||   \\|| https://github.com/makccr
+
