@@ -198,7 +198,7 @@ lsp.tsserver.setup(coq.lsp_ensure_capabilities(
 lsp.pyright.setup(coq.lsp_ensure_capabilities(
 ))
 
-lsp.gopls.setup(coq.lsp_ensure_capabilities(
+lsp.gopls.setup(coq.lsp_ensure_capabilities{
     cmd = {"gopls", "serve"},
     settings = {
       gopls = {
@@ -208,7 +208,7 @@ lsp.gopls.setup(coq.lsp_ensure_capabilities(
         staticcheck = true,
       },
     },
-))
+})
 
 lsp.tailwindcss.setup(coq.lsp_ensure_capabilities(
 ))
