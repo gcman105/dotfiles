@@ -186,6 +186,9 @@ local coq = require "coq"
 lsp.rust_analyzer.setup(coq.lsp_ensure_capabilities(
 ))
 
+lsp.intelephense.setup(coq.lsp_ensure_capabilities(
+))
+
 lsp.html.setup(coq.lsp_ensure_capabilities(
 ))
 
