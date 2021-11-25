@@ -57,8 +57,8 @@ vim.o.termguicolors = true          -- important!!
 vim.o.textwidth = 79
 vim.o.timeoutlen = 800              -- A little bit more time for macros
 vim.o.ttimeoutlen = 50              -- Make Esc work faster
-vim.o.undodir = '~/.vim/undodir'
-vim.o.undofile = true
+vim.g.undodir = '~/.vim/undodir'
+vim.g.undofile = true
 vim.o.updatetime = 300              -- Longer updatetime (default is 4000 ms  =  4 s) leads to delays and poor user experience
 vim.o.virtualedit = 'all'           -- Allow cursor into places it cant normally go
 vim.o.wildmenu = true               -- Command line completion
