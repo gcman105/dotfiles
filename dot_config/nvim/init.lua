@@ -202,7 +202,8 @@ lsp.pyright.setup(coq.lsp_ensure_capabilities(
 --})
 
 lsp.gopls.setup {
-  cmd = {"gopls", "serve"},
+  --cmd = {"gopls", "serve"},
+  cmd = {"gopls"},
   settings = {
     gopls = {
       analyses = {
