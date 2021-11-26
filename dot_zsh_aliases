@@ -40,11 +40,11 @@ alias tt="clear && cat ~/.zsh_aliases"
 alias em="emacsclient -c -a emacs"
 
 # tmuxinator aliases ---------------------------------
-alias ta="tmux attach -t "
-alias tl="tmux ls"
+alias ta="tmux attach"
+alias tl="tmux list"
 
 # tmuxinator aliases ---------------------------------
-alias ml="mux list"
+alias ml="tmuxinator list"
 
 # laravel aliases ------------------------------------
 alias sail="bash vendor/bin/sail "
