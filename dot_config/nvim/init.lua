@@ -199,8 +199,8 @@ lsp.pyright.setup {}
 --})
 
 lsp.gopls.setup {
-  cmd = {"gopls", "serve"},
-  -- cmd = {"gopls"},
+  -- cmd = {"gopls", "serve"},
+  cmd = {"gopls"},
   settings = {
     gopls = {
       analyses = {
