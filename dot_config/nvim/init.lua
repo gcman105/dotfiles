@@ -107,7 +107,7 @@ key_mapper('', '<C-k>', '<C-w>k')
 key_mapper('', '<C-l>', '<C-w>l')
 key_mapper('', '<F8>', ':TagbarToggle<CR>')
 key_mapper('', '<F18>', '<C-i>')    -- Using Karabiner to avoid collision between <Tab> and <C-i>
-key_mapper('', 'gf', ':edit <cfile><CR>')
+key_mapper('n', 'gf', ':edit <cfile><CR>')
 key_mapper('i', 'jj', '<ESC>')
 
 key_mapper('n', '<Leader>h2', ':HopChar2<CR>')
