@@ -32,7 +32,7 @@ return require('packer').startup(function()
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'phaazon/hop.nvim'
-    use 'scrooloose/nerdcommenter'
+    use 'preservim/nerdcommenter'
     use 'vifm/vifm.vim'
 
     -- Simple plugins can be specified as strings
