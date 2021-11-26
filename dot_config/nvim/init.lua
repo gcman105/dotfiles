@@ -213,6 +213,10 @@ lsp.gopls.setup {
 lsp.tailwindcss.setup {}
 
 
+-- Nerdcommenter -------------------------------------------------------------
+require'nerdcommenter'.setup{}
+
+
 -- Hop -----------------------------------------------------------------------
 require'hop'.setup{}
 
