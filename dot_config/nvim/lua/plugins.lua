@@ -15,21 +15,6 @@ return require('packer').startup(function()
     }
 
     use {
-        'ms-jpq/coq_nvim',
-        branch = 'coq'
-    }
-
-    use {
-        'ms-jpq/coq.artifacts',
-        branch = 'artifacts'
-    }
-
-    use {
-        'ms-jpq/coq.thirdparty',
-        branch = '3p'
-    }
-
-    use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }

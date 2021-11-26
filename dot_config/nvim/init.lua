@@ -101,12 +101,12 @@ local key_mapper = function(mode, key, result)
 end
 
 key_mapper('', '<C-b>', [[<cmd>Telescope buffers<CR>]])
-key_mapper('', '<C-h>', '<C-w>h')
-key_mapper('', '<C-j>', '<C-w>j')
-key_mapper('', '<C-k>', '<C-w>k')
-key_mapper('', '<C-l>', '<C-w>l')
-key_mapper('', '<F8>', ':TagbarToggle<CR>')
-key_mapper('', '<F18>', '<C-i>')    -- Using Karabiner to avoid collision between <Tab> and <C-i>
+key_mapper('n', '<C-h>', '<C-w>h')
+key_mapper('n', '<C-j>', '<C-w>j')
+key_mapper('n', '<C-k>', '<C-w>k')
+key_mapper('n', '<C-l>', '<C-w>l')
+key_mapper('n', '<F8>', ':TagbarToggle<CR>')
+key_mapper('n', '<F18>', '<C-i>')    -- Using Karabiner to avoid collision between <Tab> and <C-i>
 key_mapper('n', 'gf', ':edit <cfile><CR>')
 key_mapper('i', 'jj', '<ESC>')
 
@@ -119,7 +119,7 @@ key_mapper('n', '<Leader>hp', ':HopPattern<CR>')
 key_mapper('n', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<CR>")
 key_mapper('n', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<CR>")
 key_mapper('o', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, inclusive_jump = true })<CR>")
-key_mapper('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<CR>")
+key_mapper('o', 'F', "<cmd>lua require'hop'.hint_char2({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<CR>")
 key_mapper('', 't', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<CR>")
 key_mapper('', 'T', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<CR>")
 
@@ -186,27 +186,27 @@ require'lualine'.setup {
 local lsp = require "lspconfig"
 local coq = require "coq"
 
-lsp.rust_analyzer.setup(coq.lsp_ensure_capabilities(
-))
+lsp.rust_analyzer.setup(
+)
 
-lsp.intelephense.setup(coq.lsp_ensure_capabilities(
-))
+lsp.intelephense.setup(
+)
 
-lsp.html.setup(coq.lsp_ensure_capabilities(
-))
+lsp.html.setup(
+)
 
-lsp.tsserver.setup(coq.lsp_ensure_capabilities(
-))
+lsp.tsserver.setup(
+)
 
-lsp.pyright.setup(coq.lsp_ensure_capabilities(
-))
+lsp.pyright.setup(
+)
 
 --lsp.gopls.setup(coq.lsp_ensure_capabilities{
 --})
 
 lsp.gopls.setup {
-  --cmd = {"gopls", "serve"},
-  cmd = {"gopls"},
+  cmd = {"gopls", "serve"},
+  -- cmd = {"gopls"},
   settings = {
     gopls = {
       analyses = {
