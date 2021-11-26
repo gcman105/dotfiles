@@ -184,7 +184,6 @@ require'lualine'.setup {
 
 -- LSP -----------------------------------------------------------------------
 local lsp = require "lspconfig"
-local coq = require "coq"
 
 lsp.rust_analyzer.setup(
 )
