@@ -238,6 +238,9 @@ require'nvim-treesitter.configs'.setup {
     },
 }
 
+require('telescope').setup{
+  require('telescope').load_extension('fzf'),
+}
 
 -- Autocommands --------------------------------------------------------------
 vim.cmd([[
