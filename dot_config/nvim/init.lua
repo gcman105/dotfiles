@@ -215,8 +215,8 @@ lsp.gopls.setup {
   },
 }
 
-lsp.tailwindcss.setup(coq.lsp_ensure_capabilities(
-))
+lsp.tailwindcss.setup(
+)
 
 
 -- Hop -----------------------------------------------------------------------
