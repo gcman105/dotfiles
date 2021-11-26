@@ -184,20 +184,15 @@ require'lualine'.setup {
 -- LSP -----------------------------------------------------------------------
 local lsp = require "lspconfig"
 
-lsp.rust_analyzer.setup(
-)
+lsp.rust_analyzer.setup {}
 
-lsp.intelephense.setup(
-)
+lsp.intelephense.setup {}
 
-lsp.html.setup(
-)
+lsp.html.setup {}
 
-lsp.tsserver.setup(
-)
+lsp.tsserver.setup {}
 
-lsp.pyright.setup(
-)
+lsp.pyright.setup {}
 
 --lsp.gopls.setup(coq.lsp_ensure_capabilities{
 --})
@@ -215,8 +210,7 @@ lsp.gopls.setup {
   },
 }
 
-lsp.tailwindcss.setup(
-)
+lsp.tailwindcss.setup {}
 
 
 -- Hop -----------------------------------------------------------------------
