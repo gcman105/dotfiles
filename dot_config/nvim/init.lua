@@ -215,7 +215,7 @@ lsp.tailwindcss.setup {}
 
 
 -- Nerdcommenter -------------------------------------------------------------
-require'nerdcommenter'.setup{}
+-- require'nerdcommenter'.setup{}
 
 
 -- Hop -----------------------------------------------------------------------
