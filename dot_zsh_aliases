@@ -44,7 +44,7 @@ alias ta="tmux attach"
 alias tl="tmux list"
 
 # tmuxinator aliases ---------------------------------
-alias ml="tmuxinator list"
+alias ml="tmuxinator list-buffers"
 
 # laravel aliases ------------------------------------
 alias sail="bash vendor/bin/sail "
