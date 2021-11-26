@@ -41,10 +41,10 @@ alias em="emacsclient -c -a emacs"
 
 # tmuxinator aliases ---------------------------------
 alias ta="tmux attach"
-alias tl="tmux list"
+alias tl="tmux list-sessions"
 
 # tmuxinator aliases ---------------------------------
-alias ml="tmuxinator list-buffers"
+alias ml="tmuxinator list"
 
 # laravel aliases ------------------------------------
 alias sail="bash vendor/bin/sail "
