@@ -18,6 +18,11 @@ return require('packer').startup(function()
     }
 
     use {
+        'ms-jpq/coq_nvim',
+        branch = 'coq'
+    }
+
+    use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
