@@ -1,0 +1,43 @@
+# /Users/gcman105/.config/tmuxinator/aurisdapp.yml
+
+name: aurisdapp
+root: ~/devel/Auris/aurisdapp
+
+windows:
+  - editor:
+      layout: main-vertical
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - editor:
+          - source venv/bin/activate
+          - clear
+        - shell 1:
+          - source venv/bin/activate
+          - clear
+  - dev:
+      layout: even-horizontal
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - shell 2:
+          - source venv/bin/activate
+          - clear
+        - shell 3:
+          - source venv/bin/activate
+          - clear
+          - cat /Users/gcman105/.zsh_aliases
+  - live:
+      layout: even-horizontal
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - shell 4:
+          - source venv/bin/activate
+          - clear
+        - shell 5:
+          - source venv/bin/activate
+          - clear

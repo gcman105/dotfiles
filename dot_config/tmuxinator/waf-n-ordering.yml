@@ -1,0 +1,20 @@
+# /Users/gcman105/.config/tmuxinator/waf-n-ordering.yml
+
+name: waf-n-ordering
+root: ~/devel/WAFoods/waf-n-ordering
+
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - editor:
+          - clear
+          - nvim .
+  - dev:
+      layout: even-horizontal
+      panes:
+        - shell 2:
+          - clear
+          - yarn dev
+        - shell 3:
+          - clear
