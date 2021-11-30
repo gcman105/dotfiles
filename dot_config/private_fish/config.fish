@@ -37,9 +37,15 @@ if set -q HOME
 end
 # end XDG Base Directory Specification -------------------
 
+{{ if (eq .chezmoi.arch "arm64") }}
+# apple silicon
+set -gx SHELL /opt/homebrew/bin/fish
+export EDITOR='/opt/homebrew/bin/nvim'
+{{ else }}
+# other chip
 set -gx SHELL /usr/local/bin/fish
-
 export EDITOR='/usr/local/bin/nvim'
+{{ end }}
 
 # luajit ----------------------------------------------------------------
 set -gx LDFLAGS -L/usr/local/opt/luajit-openresty/lib
