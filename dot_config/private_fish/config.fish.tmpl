@@ -54,7 +54,13 @@ set -gx PKG_CONFIG_PATH /usr/local/opt/luajit-openresty/lib/pkgconfig
 
 
 # nnn config ------------------------------------------------------------
+{{ if (eq .chezmoi.arch "arm64") }}
+# apple silicon
+set -gx NNN_BMS "d:/Users/gcman105/Downloads;p:/Users/gcman105/Documents;c:/Users/gcman105/devel"
+{{ else }}
+# other chip
 set -gx NNN_BMS "d:/Volumes/Annes2TB-1/Downloads;p:/Volumes/Annes2TB-1/Google Drive/_PARA_GoogleDrive;c:/Users/gcman105/devel"
+{{ end }}
 set -gx NNN_USE_EDITOR 1
 set -gx NNN_TRASH 1
 set -gx NNN_CONTEXT_COLORS "1234"
