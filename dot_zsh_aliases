@@ -93,6 +93,9 @@ alias cu="composer update"
 alias phpunit="vendor/bin/phpunit "
 alias ut="phpunit"
 
+# hugo aliases ---------------------------------------
+alias hs="hugo server --watch --verbose"
+
 # venv aliases ---------------------------------------
 alias ave=". .venv/bin/activate"
 alias cve="python3 -m venv .venv && . .venv/bin/activate"
