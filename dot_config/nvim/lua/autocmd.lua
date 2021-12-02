@@ -1,3 +1,11 @@
+-- Autocommands --------------------------------------------------------------
+vim.cmd([[
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+augroup end
+]])
+
 -- Remove all trailing whitespace on save
 vim.api.nvim_exec([[
   augroup TrimWhiteSpace
@@ -12,3 +20,4 @@ vim.api.nvim_exec([[
     au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
   augroup END
   ]], false)
+
