@@ -34,8 +34,7 @@ require'lualine'.setup {
 
 -- LSP -----------------------------------------------------------------------
 local lsp = require "lspconfig"
---local coq = require "coq"
--- Setup nvim-cmp.
+local luasnip = require("luasnip")
 local cmp = require'cmp'
 
 cmp.setup({
@@ -49,9 +48,47 @@ cmp.setup({
         end,
     },
     mapping = {
+        ["<c-space>"] = cmp.mapping {
+            i = cmp.mapping.complete(),
+            c = function(
+                _ --[[fallback]]
+                )
+                if cmp.visible() then
+                    if not cmp.confirm { select = true } then
+                        return
+                    end
+                else
+                    cmp.complete()
+                end
+            end,
+        },
+
+        ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+            elseif has_words_before() then
+                cmp.complete()
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif luasnip.jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+
         ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
         ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
         ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+
         ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
         ['<C-e>'] = cmp.mapping({
             i = cmp.mapping.abort(),
@@ -89,25 +126,6 @@ cmp.setup.cmdline(':', {
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
---require('lspconfig')['nvim-lspconfig'].setup {
-    --capabilities = capabilities
---}
-
-
---lsp.rust_analyzer.setup(coq.lsp_ensure_capabilities(
---))
-
---lsp.intelephense.setup(coq.lsp_ensure_capabilities(
---))
-
---lsp.html.setup(coq.lsp_ensure_capabilities(
---))
-
---lsp.tsserver.setup(coq.lsp_ensure_capabilities(
---))
-
---lsp.pyright.setup(coq.lsp_ensure_capabilities(
---))
 
 lsp.rust_analyzer.setup { capabilities = capabilities }
 
@@ -118,9 +136,6 @@ lsp.html.setup { capabilities = capabilities }
 lsp.tsserver.setup { capabilities = capabilities }
 
 lsp.pyright.setup { capabilities = capabilities }
-
---lsp.gopls.setup(coq.lsp_ensure_capabilities{
---})
 
 lsp.gopls.setup {
   cmd = {"gopls", "serve"},
@@ -135,9 +150,6 @@ lsp.gopls.setup {
     },
   },
 }
-
---lsp.tailwindcss.setup(coq.lsp_ensure_capabilities(
---))
 
 lsp.tailwindcss.setup { capabilities = capabilities }
 
