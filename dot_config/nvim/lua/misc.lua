@@ -65,8 +65,8 @@ lsp.pyright.setup {}
 --})
 
 lsp.gopls.setup {
-  --cmd = {"gopls", "serve"},
-  cmd = {"gopls"},
+  cmd = {"gopls", "serve"},
+  --cmd = {"gopls"},
   settings = {
     gopls = {
       analyses = {
@@ -147,8 +147,8 @@ cmp.setup({
     },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'vsnip' }, -- For vsnip users.
-        -- { name = 'luasnip' }, -- For luasnip users.
+        -- { name = 'vsnip' }, -- For vsnip users.
+        { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
         -- { name = 'snippy' }, -- For snippy users.
     }, {
@@ -178,3 +178,4 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 require('lspconfig')['nvim-lspconfig'].setup {
     capabilities = capabilities
 }
+

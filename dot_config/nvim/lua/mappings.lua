@@ -14,7 +14,7 @@ local key_mapper = function(mode, key, result)
     )
 end
 
-key_mapper('', '<C-b>', [[<cmd>Telescope buffers<CR>]])
+--key_mapper('', '<C-b>', [[<cmd>Telescope buffers<CR>]])
 key_mapper('n', '<C-h>', '<C-w>h')
 key_mapper('n', '<C-j>', '<C-w>j')
 key_mapper('n', '<C-k>', '<C-w>k')
