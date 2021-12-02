@@ -35,92 +35,6 @@ require'lualine'.setup {
 -- LSP -----------------------------------------------------------------------
 local lsp = require "lspconfig"
 --local coq = require "coq"
-
---lsp.rust_analyzer.setup(coq.lsp_ensure_capabilities(
---))
-
---lsp.intelephense.setup(coq.lsp_ensure_capabilities(
---))
-
---lsp.html.setup(coq.lsp_ensure_capabilities(
---))
-
---lsp.tsserver.setup(coq.lsp_ensure_capabilities(
---))
-
---lsp.pyright.setup(coq.lsp_ensure_capabilities(
---))
-
-lsp.rust_analyzer.setup {}
-
-lsp.intelephense.setup {}
-
-lsp.html.setup {}
-
-lsp.tsserver.setup {}
-
-lsp.pyright.setup {}
-
---lsp.gopls.setup(coq.lsp_ensure_capabilities{
---})
-
-lsp.gopls.setup {
-  cmd = {"gopls", "serve"},
-  --cmd = {"gopls"},
-  settings = {
-    gopls = {
-      analyses = {
-        unusedparams = true,
-      },
-      staticcheck = true,
-    },
-  },
-}
-
---lsp.tailwindcss.setup(coq.lsp_ensure_capabilities(
---))
-
-lsp.tailwindcss.setup {}
-
-
--- Nerdcommenter -------------------------------------------------------------
---require'nerdcommenter'.setup{}
-
-
--- Hop -----------------------------------------------------------------------
-require'hop'.setup{}
-
-
--- Treesitter ----------------------------------------------------------------
-require'nvim-treesitter.configs'.setup {
-    ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-    sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-    ignore_install = { "javascript" }, -- List of parsers to ignore installing
-    highlight = {
-        enable = true,              -- false will disable the whole extension
-        disable = { "c" },  -- list of language that will be disabled
-        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-        -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-        -- Using this option may slow down your editor, and you may see some duplicate highlights.
-        -- Instead of true it can also be a list of languages
-        additional_vim_regex_highlighting = false,
-    },
-}
-
-require('telescope').setup {
-  extensions = {
-    fzf = {
-      fuzzy = true,                    -- false will only do exact matching
-      override_generic_sorter = true,  -- override the generic sorter
-      override_file_sorter = true,     -- override the file sorter
-      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
-                                       -- the default case_mode is "smart_case"
-    }
-  }
-}
-
-require('telescope').load_extension('fzf')
-
 -- Setup nvim-cmp.
 local cmp = require'cmp'
 
@@ -175,7 +89,94 @@ cmp.setup.cmdline(':', {
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-require('lspconfig')['nvim-lspconfig'].setup {
-    capabilities = capabilities
+--require('lspconfig')['nvim-lspconfig'].setup {
+    --capabilities = capabilities
+--}
+
+
+--lsp.rust_analyzer.setup(coq.lsp_ensure_capabilities(
+--))
+
+--lsp.intelephense.setup(coq.lsp_ensure_capabilities(
+--))
+
+--lsp.html.setup(coq.lsp_ensure_capabilities(
+--))
+
+--lsp.tsserver.setup(coq.lsp_ensure_capabilities(
+--))
+
+--lsp.pyright.setup(coq.lsp_ensure_capabilities(
+--))
+
+lsp.rust_analyzer.setup { capabilities = capabilities }
+
+lsp.intelephense.setup { capabilities = capabilities }
+
+lsp.html.setup { capabilities = capabilities }
+
+lsp.tsserver.setup { capabilities = capabilities }
+
+lsp.pyright.setup { capabilities = capabilities }
+
+--lsp.gopls.setup(coq.lsp_ensure_capabilities{
+--})
+
+lsp.gopls.setup {
+  cmd = {"gopls", "serve"},
+  --cmd = {"gopls"},
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+      capabilities = capabilities,
+    },
+  },
 }
+
+--lsp.tailwindcss.setup(coq.lsp_ensure_capabilities(
+--))
+
+lsp.tailwindcss.setup { capabilities = capabilities }
+
+
+-- Nerdcommenter -------------------------------------------------------------
+--require'nerdcommenter'.setup{}
+
+
+-- Hop -----------------------------------------------------------------------
+require'hop'.setup{}
+
+
+-- Treesitter ----------------------------------------------------------------
+require'nvim-treesitter.configs'.setup {
+    ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
+    ignore_install = { "javascript" }, -- List of parsers to ignore installing
+    highlight = {
+        enable = true,              -- false will disable the whole extension
+        disable = { "c" },  -- list of language that will be disabled
+        -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+        -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+        -- Using this option may slow down your editor, and you may see some duplicate highlights.
+        -- Instead of true it can also be a list of languages
+        additional_vim_regex_highlighting = false,
+    },
+}
+
+require('telescope').setup {
+  extensions = {
+    fzf = {
+      fuzzy = true,                    -- false will only do exact matching
+      override_generic_sorter = true,  -- override the generic sorter
+      override_file_sorter = true,     -- override the file sorter
+      case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                       -- the default case_mode is "smart_case"
+    }
+  }
+}
+
+require('telescope').load_extension('fzf')
 
