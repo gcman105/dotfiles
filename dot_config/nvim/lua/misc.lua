@@ -146,9 +146,9 @@ lsp.gopls.setup {
         unusedparams = true,
       },
       staticcheck = true,
-      capabilities = capabilities,
     },
   },
+  capabilities = capabilities
 }
 
 lsp.tailwindcss.setup { capabilities = capabilities }
