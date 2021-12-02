@@ -17,21 +17,6 @@ return require('packer').startup(function()
         }
     }
 
-    --use {
-        --'ms-jpq/coq_nvim',
-        --branch = 'coq'
-    --}
-
-    --use {
-        --'ms-jpq/coq.artifacts',
-        --branch = 'artifacts'
-    --}
-
-    --use {
-        --'ms-jpq/coq.thirdparty',
-        --branch = '3p'
-    --}
-
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
