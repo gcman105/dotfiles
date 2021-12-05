@@ -18,11 +18,16 @@ return require('packer').startup(function()
     }
 
     use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    use 'hrsh7th/nvim-cmp'
+
+    -- Sources
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-cmdline"
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-path"
+    use "hrsh7th/cmp-nvim-lua"
+    use "hrsh7th/cmp-nvim-lsp"
+    use "hrsh7th/cmp-nvim-lsp-document-symbol"
+    use "saadparwaiz1/cmp_luasnip"
 
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
@@ -37,6 +42,13 @@ return require('packer').startup(function()
         run = 'make'
     }
 
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+
     use 'Mofiqul/dracula.nvim'
     use 'ThePrimeagen/harpoon'
     use 'farmergreg/vim-lastplace'
@@ -49,7 +61,6 @@ return require('packer').startup(function()
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'phaazon/hop.nvim'
-    use 'preservim/nerdcommenter'
     use 'vifm/vifm.vim'
 
     -- Simple plugins can be specified as strings
