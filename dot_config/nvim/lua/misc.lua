@@ -1,11 +1,12 @@
+-- Load by calling `lua require('misc')` from your init.vim
 
 -- Theme ---------------------------------------------------------------------
-vim.cmd[[colorscheme dracula]]
+require('nightfox').load('Nightfox')
 
 require'lualine'.setup {
     options = {
         icons_enabled = true,
-        theme = 'auto',
+        theme = 'nightfox',
         component_separators = { left = '', right = ''},
         section_separators = { left = '', right = ''},
         disabled_filetypes = {},

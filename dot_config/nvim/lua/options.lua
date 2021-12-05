@@ -1,3 +1,5 @@
+-- Load by calling `lua require('options')` from your init.vim
+
 vim.cmd([[
 set cpoptions+=$                " Show $ at the end of a change command
 set foldopen+=jump
