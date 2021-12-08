@@ -96,6 +96,7 @@ alias ut="phpunit"
 # hugo aliases ---------------------------------------
 alias hb="hugo --cleanDestinationDir --destination docs"
 alias hs="hugo server --watch --verbose"
+alias hss="hugo server --watch --verbose --disableFastRender"
 
 # venv aliases ---------------------------------------
 alias ave=". .venv/bin/activate"
