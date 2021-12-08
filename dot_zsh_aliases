@@ -94,7 +94,7 @@ alias phpunit="vendor/bin/phpunit "
 alias ut="phpunit"
 
 # hugo aliases ---------------------------------------
-alias hb="hugo --cleanDestinationDir --destination docs"
+alias hb="hugo --cleanDestinationDir"
 alias hs="hugo server --watch --verbose"
 alias hss="hugo server --watch --verbose --disableFastRender"
 
