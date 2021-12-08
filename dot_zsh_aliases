@@ -66,6 +66,7 @@ alias gma="git submodule add "
 alias gmi="git submodulei init"
 alias gmu="git submodule update --remote --merge"
 alias gp="git push "
+alias gps="git subtree push --prefix public origin gh-pages"
 alias gs="git status"
 
 # python aliases -------------------------------------
