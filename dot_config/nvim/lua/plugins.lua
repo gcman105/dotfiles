@@ -49,10 +49,10 @@ return require('packer').startup(function()
 
     use 'ThePrimeagen/harpoon'
     use 'farmergreg/vim-lastplace'
-    use 'jiangmiao/auto-pairs'
+    -- use 'jiangmiao/auto-pairs'
     use 'liuchengxu/vim-which-key'
-    use 'majutsushi/tagbar'
-    use 'mbbill/undotree'
+    -- use 'majutsushi/tagbar'
+    -- use 'mbbill/undotree'
     use 'mcchrish/nnn.vim'
     use 'mhinz/vim-startify'
     use 'nvim-lua/plenary.nvim'
