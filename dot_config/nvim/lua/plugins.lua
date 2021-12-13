@@ -35,10 +35,10 @@ return require('packer').startup(function()
         run = ':TSUpdate'
     }
 
-    use {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        run = 'make'
-    }
+    -- use {
+    --     'nvim-telescope/telescope-fzf-native.nvim',
+    --     run = 'make'
+    -- }
 
     use {
         'numToStr/Comment.nvim',
