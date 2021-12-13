@@ -58,7 +58,7 @@ return require('packer').startup(function()
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     -- use 'phaazon/hop'
-    require("./plugins/phaazon_hop.lua")
+    require("../plugins/phaazon_hop.lua")
     use 'vifm/vifm.vim'
 
 end)
