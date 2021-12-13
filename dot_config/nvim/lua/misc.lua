@@ -1,7 +1,8 @@
 -- Load by calling `lua require('misc')` from your init.vim
 
 -- Theme ---------------------------------------------------------------------
-require('nightfox').load('Nightfox')
+-- require('nightfox').load('nightfox')
+require('nightfox').load('nordfox')
 
 require'lualine'.setup {
     options = {
