@@ -7,7 +7,7 @@ return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    -- use 'EdenEast/nightfox.nvim' -- Set colors scheme
+    use 'EdenEast/nightfox.nvim' -- Set colors scheme
 
     use {
         'nvim-lualine/lualine.nvim',
