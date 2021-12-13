@@ -1,2 +1,2 @@
-use './phaazon/hop.nvim'
+use 'phaazon/hop'
 require'hop'.setup{}

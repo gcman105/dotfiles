@@ -160,7 +160,7 @@ lsp.tailwindcss.setup { capabilities = capabilities }
 
 
 -- Hop -----------------------------------------------------------------------
-
+require'hop'.setup{}
 
 -- Treesitter ----------------------------------------------------------------
 require'nvim-treesitter.configs'.setup {
