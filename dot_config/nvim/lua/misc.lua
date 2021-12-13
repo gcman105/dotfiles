@@ -2,7 +2,7 @@
 
 -- Theme ---------------------------------------------------------------------
 -- require('nightfox').load('nightfox')
-require('nightfox').load('dayfox')
+require('nightfox').load('duskfox')
 
 require'lualine'.setup {
     options = {
