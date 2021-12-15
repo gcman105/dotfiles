@@ -43,8 +43,8 @@ cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-            -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
             -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
             -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
         end,
@@ -175,7 +175,7 @@ require'nvim-treesitter.configs'.setup {
         -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
         -- Using this option may slow down your editor, and you may see some duplicate highlights.
         -- Instead of true it can also be a list of languages
-        additional_vim_regex_highlighting = false,
+        additional_vim_regex_highlighting = true,
     },
 }
 
