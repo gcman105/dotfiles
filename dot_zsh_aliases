@@ -14,7 +14,7 @@ alias vv="vifm"
 alias ic="~/apps/webp-convert-directory.sh"
 
 # nnn aliases ----------------------------------------
-alias nnn="sudo nnn -Rde"
+alias snn="sudo nnn -Rde"
 alias nn="nnn -Rde"
 
 # ngrok aliases --------------------------------------
