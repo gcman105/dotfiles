@@ -111,5 +111,5 @@ alias yl="yarn list "
 
 # util aliases ---------------------------------------
 alias ls='nnn -Rde'
-alias ll='ls -lG'
+# alias ll='ls -lG'
 
