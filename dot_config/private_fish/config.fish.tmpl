@@ -64,7 +64,8 @@ set -gx NNN_BMS "d:/Volumes/Seagate2TB/Downloads;p:/Volumes/Seagate2TB/Google Dr
 set -gx NNN_USE_EDITOR 1
 set -gx NNN_TRASH 1
 set -gx NNN_CONTEXT_COLORS "1234"
-set -gx NNN_PLUG 'o:fzopen;7:preview-tui'
+set -gx NNN_FIFO=/tmp/nnn.fifo nnn
+set -gx NNN_PLUG 'o:fzopen;p:preview-tui'
 
 # Nightfox Color Palette
 # Style: nightfox
