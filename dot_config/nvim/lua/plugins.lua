@@ -60,6 +60,7 @@ return require('packer').startup(function()
     use 'phaazon/hop.nvim'
     -- require("plugins/phaazon_hop.lua")
     use 'vifm/vifm.vim'
+    use 'vimwiki/vimwiki'
 
 end)
 
