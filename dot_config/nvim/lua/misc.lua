@@ -155,15 +155,20 @@ lsp.gopls.setup {
 
 lsp.tailwindcss.setup { capabilities = capabilities }
 
+lsp.sumneko_lua.setup {
+    -- ... other configs
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+}
 
 -- Nerdcommenter -------------------------------------------------------------
 --require'nerdcommenter'.setup{}
 
-require'lspconfig'.sumneko_lua.setup {
-  settings = {
-    -- Insert your settings here
-  }
-}
 
 -- Hop -----------------------------------------------------------------------
 require'hop'.setup{}
