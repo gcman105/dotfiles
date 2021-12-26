@@ -30,6 +30,7 @@ return require('packer').startup(function()
     use "hrsh7th/cmp-nvim-lsp-document-symbol"
 
     use "williamboman/nvim-lsp-installer"
+    use "sumneko/lua-language-server"
 
     -- snippets
     use 'L3MON4D3/LuaSnip'
