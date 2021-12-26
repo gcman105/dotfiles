@@ -160,6 +160,8 @@ lsp.tailwindcss.setup { capabilities = capabilities }
 --require'nerdcommenter'.setup{}
 
 
+require'nvim-lsp-installer'.setup{}
+
 -- Hop -----------------------------------------------------------------------
 require'hop'.setup{}
 
