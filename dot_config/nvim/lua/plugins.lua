@@ -19,15 +19,21 @@ return require('packer').startup(function()
 
     use 'neovim/nvim-lspconfig'
 
+    -- cmp plugins
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-cmdline"
     use "hrsh7th/cmp-buffer"
     use "hrsh7th/cmp-path"
     use "hrsh7th/cmp-nvim-lua"
+    use "saadparwaiz1/cmp_luasnip" -- snippet completions
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/cmp-nvim-lsp-document-symbol"
 
+    use "williamboman/nvim-lsp-installer"
+
+    -- snippets
     use 'L3MON4D3/LuaSnip'
+    use "rafamadriz/friendly-snippets"
     use 'saadparwaiz1/cmp_luasnip'
 
     use {
