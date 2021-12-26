@@ -159,8 +159,11 @@ lsp.tailwindcss.setup { capabilities = capabilities }
 -- Nerdcommenter -------------------------------------------------------------
 --require'nerdcommenter'.setup{}
 
-
-require'nvim-lsp-installer'.setup{}
+require'lspconfig'.sumneko_lua.setup {
+  settings = {
+    -- Insert your settings here
+  }
+}
 
 -- Hop -----------------------------------------------------------------------
 require'hop'.setup{}
