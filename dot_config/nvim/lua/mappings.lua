@@ -1,7 +1,7 @@
 -- Load by calling `lua require('mappings')` from your init.vim
 
-default_options = {noremap = true, silent = true}
-expr_options = {noremap = true, expr = true, silent = true}
+local default_options = {noremap = true, silent = true}
+-- local expr_options = {noremap = true, expr = true, silent = true}
 
 -- map the leader key
 vim.api.nvim_set_keymap("n", "<Space>", "<NOP>", default_options)
@@ -49,7 +49,7 @@ key_mapper('n', '<Leader>tq', [[<cmd>Telescope quickfix<CR>]])
 key_mapper('n', '<Leader>tr', [[<cmd>Telescope lsp_references<CR>]])
 key_mapper('n', '<Leader>ts', [[<cmd>Telescope grep_string<CR>]])
 
-key_mapper('n', '<Leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
+key_mapper('n', '<Leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]])
 key_mapper('', '<Leader>', ':WhichKey " "<CR>')
 key_mapper('n', '<Leader>v', ':Vifm . .<CR>')
 
