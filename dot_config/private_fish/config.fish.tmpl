@@ -140,13 +140,13 @@ set -gx LC_CTYPE en_GB.UTF-8
 # EXPORT PATH -----------------------------------------------------------
 export PATH
 
-# ALIASES ---------------------------------------------------------------
-source ~/.zsh_aliases
-
 # ABBREVIATIONS ---------------------------------------------------------
 abbr -a sail "./vendor/bin/sail"
 abbr -a cz "chezmoi"
 
-source ~/.config/fish/completions/tmuxinator.fish
-source ~/.config/fish/completions/fnm.fish
+if status is-interactive
+    source ~/.zsh_aliases
+    source ~/.config/fish/completions/tmuxinator.fish
+    source ~/.config/fish/completions/fnm.fish
+end
 
