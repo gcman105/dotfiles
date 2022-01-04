@@ -11,6 +11,12 @@ if set -q HOME
 	  set -gx XDG_DATA_HOME "$HOME/.local/share"
 	end
 
+	if set -q XDG_CONFIG_HISTFILE
+	  echo $XDG_CONFIG_HISTFILE
+	else
+	   set -gx HISTFILE "$HOME/.zsh_history"
+	end
+
 	if set -q XDG_CONFIG_HOME
 	  echo $XDG_CONFIG_HOME
 	else
