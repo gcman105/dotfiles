@@ -8,7 +8,7 @@ function __fish_tmuxinator_using_command
   return 1
 end
 
-set __fish_tmuxinator_program_cmd (commandline -o)[1]
+set __fish_tmuxinator_program_cmd (bash -c commandline -o)[1]
 
 function __fish_tmuxinator_program
   eval "__fish_tmuxinator_program_cmd $argv"
