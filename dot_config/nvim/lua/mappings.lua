@@ -1,5 +1,7 @@
-default_options = {noremap = true, silent = true}
-expr_options = {noremap = true, expr = true, silent = true}
+-- Load by calling `lua require('mappings')` from your init.vim
+
+local default_options = {noremap = true, silent = true}
+-- local expr_options = {noremap = true, expr = true, silent = true}
 
 -- map the leader key
 vim.api.nvim_set_keymap("n", "<Space>", "<NOP>", default_options)
@@ -47,7 +49,7 @@ key_mapper('n', '<Leader>tq', [[<cmd>Telescope quickfix<CR>]])
 key_mapper('n', '<Leader>tr', [[<cmd>Telescope lsp_references<CR>]])
 key_mapper('n', '<Leader>ts', [[<cmd>Telescope grep_string<CR>]])
 
-key_mapper('n', '<Leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]], { noremap = true, silent = true })
+key_mapper('n', '<Leader>sf', [[<cmd>lua require('telescope.builtin').find_files({previewer = false})<CR>]])
 key_mapper('', '<Leader>', ':WhichKey " "<CR>')
 key_mapper('n', '<Leader>v', ':Vifm . .<CR>')
 
@@ -85,17 +87,17 @@ key_mapper('n', '<Leader>5', [[<cmd>lua require("harpoon.ui").nav_file(5)<CR>]])
 --map("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>", default_options)
 
 ---- Resizing panes
---map("n", "<Left>", ":vertical resize +1<CR>", default_options)
---map("n", "<Right>", ":vertical resize -1<CR>", default_options)
---map("n", "<Up>", ":resize -1<CR>", default_options)
---map("n", "<Down>", ":resize +1<CR>", default_options)
+-- map("n", "<shift><Left>", ":vertical resize +1<CR>", default_options)
+-- map("n", "<shift><Right>", ":vertical resize -1<CR>", default_options)
+-- map("n", "<shift><Up>", ":resize -1<CR>", default_options)
+-- map("n", "<shift><Down>", ":resize +1<CR>", default_options)
 
 ---- Autocorrect spelling from previous error
 --map("i", "<c-f>", "<c-g>u<Esc>[s1z=`]a<c-g>u", default_options)
 
 ---- Move selected line / block of text in visual mode
---map("x", "K", ":move '<-2<CR>gv-gv", default_options)
---map("x", "J", ":move '>+1<CR>gv-gv", default_options)
+-- map("x", "K", ":move '<-2<CR>gv-gv", default_options)
+-- map("x", "J", ":move '>+1<CR>gv-gv", default_options)
 
 ---- starlite mappings
 --map("n", "*", "<cmd>lua require'starlite'.star()<CR>", default_options)

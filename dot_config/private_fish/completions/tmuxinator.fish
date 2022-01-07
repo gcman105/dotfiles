@@ -11,7 +11,7 @@ end
 set __fish_tmuxinator_program_cmd (commandline -o)[1]
 
 function __fish_tmuxinator_program
-  eval "__fish_tmuxinator_program_cmd $argv"
+  eval "__fish_tmuxinator_program_cmd bash -c $argv"
 end
 
 complete -f -c "__fish_tmuxinator_program_cmd"                                                -a '(__fish_tmuxinator_program completions start)'

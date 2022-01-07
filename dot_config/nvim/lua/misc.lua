@@ -1,11 +1,13 @@
+-- Load by calling `lua require('misc')` from your init.vim
 
 -- Theme ---------------------------------------------------------------------
-vim.cmd[[colorscheme dracula]]
+require('nightfox').load('nightfox')
+-- require('nightfox').load('duskfox')
 
 require'lualine'.setup {
     options = {
         icons_enabled = true,
-        theme = 'auto',
+        theme = 'nightfox',
         component_separators = { left = '', right = ''},
         section_separators = { left = '', right = ''},
         disabled_filetypes = {},
@@ -14,7 +16,7 @@ require'lualine'.setup {
     sections = {
         lualine_a = {'mode'},
         lualine_b = {'branch', 'diff',
-        {'diagnostics', sources={'nvim_lsp', 'coc'}}},
+        {'diagnostics', sources = {'nvim_diagnostic'}}},
         lualine_c = {'filename'},
         lualine_x = {'encoding', 'fileformat', 'filetype'},
         lualine_y = {'progress'},
@@ -41,8 +43,8 @@ cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-            -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
             -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
             -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
         end,
@@ -153,6 +155,16 @@ lsp.gopls.setup {
 
 lsp.tailwindcss.setup { capabilities = capabilities }
 
+lsp.sumneko_lua.setup {
+    -- ... other configs
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
+}
 
 -- Nerdcommenter -------------------------------------------------------------
 --require'nerdcommenter'.setup{}
@@ -161,15 +173,14 @@ lsp.tailwindcss.setup { capabilities = capabilities }
 -- Hop -----------------------------------------------------------------------
 require'hop'.setup{}
 
-
 -- Treesitter ----------------------------------------------------------------
 require'nvim-treesitter.configs'.setup {
     ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-    ignore_install = { "javascript" }, -- List of parsers to ignore installing
+    ignore_install = { }, -- List of parsers to ignore installing
     highlight = {
         enable = true,              -- false will disable the whole extension
-        disable = { "c" },  -- list of language that will be disabled
+        disable = { },  -- list of language that will be disabled
         -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
         -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
         -- Using this option may slow down your editor, and you may see some duplicate highlights.

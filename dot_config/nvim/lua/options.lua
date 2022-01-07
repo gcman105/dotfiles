@@ -1,3 +1,5 @@
+-- Load by calling `lua require('options')` from your init.vim
+
 vim.cmd([[
 set cpoptions+=$                " Show $ at the end of a change command
 set foldopen+=jump
@@ -14,6 +16,7 @@ set nocompatible
   "           + save/restore buffer list
 hi ColorColumn ctermbg=darkgrey guibg=darkgrey
 filetype plugin on
+syntax on
 ]])
 
 --vim.o.guicursor = n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
@@ -85,6 +88,7 @@ let g:nnn#command = 'nnn -Rd'
 let g:python3_host_prog = expand('/Users/gcman105/.venv/bin/python')
 let g:vifm_replace_netrw = 1
 let g:vifm_replace_netrw_cmd = "Vifm"
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 ]])
 
 --local o = vim.opt
