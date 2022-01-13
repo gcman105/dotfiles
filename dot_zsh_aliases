@@ -110,6 +110,6 @@ alias yd="yarn add -D"
 alias yl="yarn list "
 
 # util aliases ---------------------------------------
-alias ls='nnn -Rde'
+#alias ls='nnn -Rde'
 # alias ll='ls -lG'
 
