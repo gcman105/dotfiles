@@ -30,7 +30,6 @@ fi
 export SHELL="/usr/local/bin/zsh"
 export PATH="/usr/local/bin:$PATH"
 
-
 # Enable autocompletions ------------------------------------------------
 autoload -Uz compinit
 typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
