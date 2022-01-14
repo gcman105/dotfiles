@@ -16,9 +16,9 @@ window.dynamic_title: true
 # Font Customization
 font:
   normal:
-    family: FiraCode Nerd Font Mono
-    style: Retina
-  size: 13.25
+    family: Fira Code Retina
+    style: Regular
+  size: 13
   offset:
     x: 0
     y: 0
