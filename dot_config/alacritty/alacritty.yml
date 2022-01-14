@@ -2,15 +2,15 @@
 window:
   dimensions:
     columns: 160
-    lines: 85
+    lines: 82
   padding:
     x: 3
     y: 3
-  decorations: full
+  decorations: buttonless
 scrolling:
   history: 10000
   multiplier: 3
-background_opacity: .90
+background_opacity: .95
 window.dynamic_title: true
 
 # Font Customization
