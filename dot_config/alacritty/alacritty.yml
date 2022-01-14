@@ -2,7 +2,7 @@
 window:
   dimensions:
     columns: 160
-    lines: 82
+    lines: 85
   padding:
     x: 3
     y: 3
@@ -10,14 +10,14 @@ window:
 scrolling:
   history: 10000
   multiplier: 3
-background_opacity: .95
+background_opacity: .90
 window.dynamic_title: true
 
 # Font Customization
 font:
   normal:
     family: FiraCode Nerd Font Mono
-    style: Regular
+    style: Retina
   size: 13.25
   offset:
     x: 0
