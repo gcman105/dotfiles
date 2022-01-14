@@ -16,8 +16,8 @@ window.dynamic_title: true
 # Font Customization
 font:
   normal:
-    family: Fira Code Retina
-    style: Regular
+    family: Fira Code
+    style: Retina
   size: 13
   offset:
     x: 0
