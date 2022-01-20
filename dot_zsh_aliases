@@ -99,8 +99,8 @@ alias hs="hugo server --watch --verbose"
 alias hss="hugo server --watch --verbose --disableFastRender"
 
 # venv aliases ---------------------------------------
-alias ave=". .venv/bin/activate"
-alias cve="python3 -m venv .venv && . .venv/bin/activate"
+alias ave="source .venv/bin/activate.fish"
+alias cve="python3 -m venv ./.venv && source .venv/bin/activate.fish"
 alias dve="deactivate"
 
 # yarn aliases ---------------------------------------
