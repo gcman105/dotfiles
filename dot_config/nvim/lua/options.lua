@@ -89,6 +89,9 @@ let g:python3_host_prog = expand('/Users/gcman105/.venv/bin/python')
 let g:vifm_replace_netrw = 1
 let g:vifm_replace_netrw_cmd = "Vifm"
 let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+
+let g:user_emmet_leader_key='<C-Z>'
+let g:user_emmet_install_global = 0
 ]])
 
 --local o = vim.opt
