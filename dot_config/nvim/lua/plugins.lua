@@ -55,6 +55,7 @@ return require('packer').startup(function()
         end
     }
 
+    use 'mattn/emmet-vim'
     use 'ThePrimeagen/harpoon'
     use 'farmergreg/vim-lastplace'
     use 'jiangmiao/auto-pairs'
@@ -66,7 +67,7 @@ return require('packer').startup(function()
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     use 'phaazon/hop.nvim'
-    -- require("plugins/phaazon_hop.lua")
+    -- require("plugins.phaazon_hop")
     use 'vifm/vifm.vim'
     -- use 'vimwiki/vimwiki'
 
