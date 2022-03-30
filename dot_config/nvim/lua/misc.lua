@@ -1,7 +1,7 @@
 -- Load by calling `lua require('misc')` from your init.vim
 
 -- Theme ---------------------------------------------------------------------
-:colorscheme nightfox
+-- :colorscheme nightfox
 -- require('nightfox').load('nightfox')
 -- require('nightfox').load('duskfox')
 
