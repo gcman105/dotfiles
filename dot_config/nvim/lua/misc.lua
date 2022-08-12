@@ -172,7 +172,7 @@ lsp.sumneko_lua.setup {
 
 
 -- Hop -----------------------------------------------------------------------
---require'hop'.setup{}
+require'hop'.setup{}
 
 -- Treesitter ----------------------------------------------------------------
 require'nvim-treesitter.configs'.setup {
