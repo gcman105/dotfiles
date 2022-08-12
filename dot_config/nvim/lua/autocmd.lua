@@ -1,10 +1,10 @@
 -- Autocommands --------------------------------------------------------------
 vim.cmd([[
-augroup packer_user_config
-autocmd!
-autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-autocmd FileType html,css EmmetInstall
-augroup end
+    augroup packer_user_config
+        autocmd!
+        autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+        autocmd FileType html,css EmmetInstall
+    augroup end
 ]])
 
 -- Remove all trailing whitespace on save
