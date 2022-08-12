@@ -66,7 +66,7 @@ return require('packer').startup(function()
     use 'mhinz/vim-startify'
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
-    use 'phaazon/hop.nvim'
+    -- use 'phaazon/hop.nvim'
     -- require("plugins.phaazon_hop")
     use 'vifm/vifm.vim'
     -- use 'vimwiki/vimwiki'
