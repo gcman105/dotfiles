@@ -135,12 +135,11 @@ lsp.rust_analyzer.setup { capabilities = capabilities }
 lsp.intelephense.setup { capabilities = capabilities }
 
 lsp.html.setup {
-    cmd = { "vscode-html-language-server.cmd", "--stdio" },
+    filetypes = { "html", "htmldjango" },
     capabilities = capabilities,
 }
 
 lsp.cssls.setup {
-  cmd = { "vscode-css-language-server.cmd", "--stdio" },
   capabilities = capabilities,
 }
 
