@@ -136,7 +136,6 @@ lsp.intelephense.setup { capabilities = capabilities }
 
 lsp.html.setup {
     filetypes = { "html", "htmldjango" },
-    cmd = { "vscode-html-languageservice", "--stdio" },
     capabilities = capabilities,
 }
 
