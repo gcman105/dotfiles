@@ -96,6 +96,8 @@ source ~/.tmxi/tmuxinator.zsh
 
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
+export PATH="$HOME/.local/share/vim-lsp-settings/servers:$PATH"
+
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 
